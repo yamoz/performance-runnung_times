@@ -8,7 +8,8 @@ $randMax = readline('Enter max number bound: ');
 $howManyRoundsToCount = readline('Enter total count times: ');
 print("now the random number is between ". $randMin . " and " . $randMax . "\n\ngame start:\n\n");
 
-$totalRunTimesCount = 0; // initial the total running times counter
+$totalRunTimesCountSeqSearch = 0; // initial the total sequential search running times counter
+$totalRunTimesCountBinSearch = 0; // initial the total binary search running times counter
 
 $autoFillNum = 0; // initial the autoFillNum to 0
 $userInputNum = 0; // initial the user Input Number
@@ -18,6 +19,7 @@ for ( $i = $howManyRoundsToCount; $i > 0; $i-- ) {
     $up = $randMax;
     $lower = $randMin;
     $randomNum = rand( $randMin, $randMax ); // 每回合都產生新亂數
+    $totalRunTimesCountSeqSearch+=$randomNum; // seq search search times is from 1 to the number
     $everyRunTimesCount = 0; // reset the running times counter every round
     while ( true ) {
         
@@ -38,8 +40,9 @@ for ( $i = $howManyRoundsToCount; $i > 0; $i-- ) {
             break; // if error, break.
         }
     }
-    $totalRunTimesCount+=$everyRunTimesCount;
+    $totalRunTimesCountBinSearch+=$everyRunTimesCount;
 }
 
-print("The average guess times is " . $totalRunTimesCount/$howManyRoundsToCount . " times.\n\n");
+print("The average guess times of Sequential Search is " . $totalRunTimesCountSeqSearch/$howManyRoundsToCount . " times.\n\n");
+print("The average guess times of Binary Search is " . $totalRunTimesCountBinSearch/$howManyRoundsToCount . " times.\n\n");
 ?>
