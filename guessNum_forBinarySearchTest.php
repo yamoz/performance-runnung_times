@@ -19,7 +19,7 @@ for ( $i = $howManyRoundsToCount; $i > 0; $i-- ) {
     $up = $randMax;
     $lower = $randMin;
     $randomNum = rand( $randMin, $randMax ); // 每回合都產生新亂數
-    $totalRunTimesCountSeqSearch+=$randomNum; // seq search search times is from 1 to the number
+    $totalRunTimesCountSeqSearch+=($randomNum-$randMin+1); // seq search search times is from 1 to the number
     $everyRunTimesCount = 0; // reset the running times counter every round
     while ( true ) {
         
