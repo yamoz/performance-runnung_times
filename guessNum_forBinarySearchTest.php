@@ -45,4 +45,5 @@ for ( $i = $howManyRoundsToCount; $i > 0; $i-- ) {
 
 print("The average guess times of Sequential Search is " . $totalRunTimesCountSeqSearch/$howManyRoundsToCount . " times.\n\n");
 print("The average guess times of Binary Search is " . $totalRunTimesCountBinSearch/$howManyRoundsToCount . " times.\n\n");
+// git test
 ?>
